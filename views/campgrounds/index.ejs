@@ -1,0 +1,60 @@
+<% include ../partials/header %> 
+
+    <header class="jumbotron">
+         <div class="container">
+             <h1> <i class="far fa-compass" style="font-size:53px;"></i> Welcome to Campoto!</h1>
+             <p>Croudsourced camping trails in one single place.</p>
+             <p>
+                <a class="btn btn-primary btn-large" href="/campgrounds/new">Add New Campground</a>
+             </p>
+         </div>
+    </header>
+     
+<% include ../partials/messages %> 
+
+    <div class="container">
+         <h3 id="textalign"> View all our hand-picked campgrounds here! </h3>
+         <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+            <% campgrounds.forEach(function(campground){ %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                       <img src="<%= campground.image %>">
+                       <div class="caption">
+                           <h4><%= campground.name %></h4>
+                       </div>
+                       <p>
+                           <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary btn-sm">More Info</a>
+                       </p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+    
+    
+<div class="container-fluid detail">
+    <h3 id="textalign"> What can you do with Campoto?</h3>
+    <div class="row">
+        <div class="col-md-4 col-sm-12 text-center">
+            <i id="mass" class="fas fa-map-marked" style="font-size:88px;"></i>
+            <br>
+            <p class="text-center "> <h4 id="p2"> Add </h4> </p> 
+            <p id="p2-1"> Add your favorite campsite. 
+            Contrary to popular belief, Lorem Ipsum is not simply random text</p>
+        </div>
+        <div class="col-md-4 col-sm-12 text-center">
+            <i id="mass" class="fas fa-search" style="font-size:88px;"></i>
+            <br>
+            <p class="text-center"> <h4 id="p2"> View </h4> </p> 
+            <p id="p2-1"> View all uploaded campsites. Contrary to popular belief, Lorem Ipsum is not simply random text </p>
+        </div>
+        <div class="col-md-4 col-sm-12 text-center">
+            <i id="mass" class="fas fa-comments" style="font-size:88px;"></i>
+            <br>
+            <p class="text-center"> <h4 id="p2"> Comment </h4> </p> 
+            <p id="p2-1"> Comment your experience! Contrary to popular belief, Lorem Ipsum is not simply random text</p>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
